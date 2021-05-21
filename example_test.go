@@ -1,13 +1,4 @@
-# graceful
-
-gracefully shutdown all the things
-
-
-##  Example
-A graceful http server example. 
-
-```go
-package main
+package graceful_test
 
 import (
 	"fmt"
@@ -16,7 +7,7 @@ import (
 	"github.com/hyqe/graceful"
 )
 
-func main() {
+func Example() {
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "hello")
 	})
@@ -28,4 +19,3 @@ func main() {
 
 	graceful.Run(server)
 }
-```
